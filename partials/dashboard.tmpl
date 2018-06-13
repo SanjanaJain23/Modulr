@@ -1,0 +1,70 @@
+<div ng-include="'partials/header.tmpl'"></div>
+<section class="section-gap">
+	<div class="container">
+		<div class="visible-xs text-center">
+			<button class="btn btn-default wave-bdr wave-bg pad-rl-20">Create new customer</button>
+		</div>
+		<h4>Search by an account name or ID</h4>
+		<div class="row hidden-xs">
+			<div class="col-sm-6">
+				<form>
+					<div class="input-group">
+			            <input type="text" name="search-data" class="form-control" ng-model="query" placeholder="Enter an account name or ID">
+			            <span class="input-group-addon input-group-addon-wave wave-bg">Go</span>
+			        </div>
+				</form>
+			</div>
+			<div class="col-sm-6 text-right">
+				<button class="btn btn-default wave-bdr wave-bg pad-rl-20">Create new customer</button>
+			</div>
+		</div>
+		<div class=" visible-xs">
+				<form>
+					<div class="input-group">
+			            <input type="text" name="search-data" class="form-control" ng-model="query" placeholder="Enter an account name or ID">
+			            <span class="input-group-addon input-group-addon-wave wave-bg">Go</span>
+			        </div>
+				</form>
+		</div>
+	</div>
+</section>
+<section class="main">
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+				    <tr>
+				    	<th>
+				    		<a href="" ng-click="orderByField='id'; reverseSort = !reverseSort">Account Id<span ng-show="orderByField == 'id'"><span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top"></span><span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom"></span></span></a>
+				    	</th>
+				        <th>
+				        	<a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">Account Name<span ng-show="orderByField == 'name'"><span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top"></span><span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom"></span></span></a>
+				    	</th>
+				        <th>
+				        	<a href="" ng-click="orderByField='accNumber'; reverseSort = !reverseSort">Account Number<span ng-show="orderByField == 'accNumber'"><span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top"></span><span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom"></span></span></a>
+				        </th>
+				        <th>
+				        	<a href="" ng-click="orderByField='sortCode'; reverseSort = !reverseSort">Sortcode<span ng-show="orderByField == 'sortCode'"><span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top"></span><span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom"></span></span></a>
+				    	</th>
+				        <th>
+				        	<a href="" ng-click="orderByField='balance'; reverseSort = !reverseSort">Balance<span ng-show="orderByField == 'balance'"><span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-top"></span><span ng-show="reverseSort" class="glyphicon glyphicon-triangle-bottom"></span></span></a>
+				        </th>
+				    </tr>
+			    </thead>
+			    <tbody>
+			    <tr ng-repeat="d in getJsonData | filter : search | orderBy : orderByField : reverseSort">
+				    <td>{{ d.id }}</td>
+				    <td><strong>{{ d.name }}</strong></td>
+				    <td>{{ d.identifiers[0].accountNumber }}</td>
+				    <td>{{ d.identifiers[0].sortCode }}</td>
+				    <td><strong>{{ d.balance }}</strong></td>
+			  	</tr>
+			    </tbody>
+			</table>
+			<div class="spinner text-center" ng-show="spinner"><img src="../Images/spinner.svg"></div>
+		</div>
+	</div>
+	
+</section>
+<div class="container">
+</div>

@@ -1,0 +1,36 @@
+header{
+	section{
+		figure{
+			img.logo{
+				max-width: 120px;
+    			margin: $mar-20;
+			}
+			img.blocks{
+				max-width: 340px;
+			}
+		}
+	}
+}
+
+.nav-links{
+	nav{
+		ul{
+			//padding: 0;
+		    list-style-type: none;
+		    //margin: 0;
+		    color: $white;
+		    li{
+				display: inline-block;
+			    margin: 0px 25px 0 0;
+			    padding: 10px 0  6px;
+			    &.active, &:hover {
+			    	border-bottom: 4px solid $spray;
+			    }
+			    a{
+					color: $white; 
+				}
+			}
+		}
+	}
+}
+

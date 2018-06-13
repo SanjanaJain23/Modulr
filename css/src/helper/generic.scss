@@ -1,0 +1,33 @@
+// generic.scss
+
+
+body{
+	color: #5C686D;
+}
+
+a{ 
+	&:hover, &:visited, &:focus{
+		text-decoration: none;
+	}
+}
+
+.pad-rl-20{
+	padding-right: $pad-20;
+	padding-left: $pad-20;
+}
+
+.section-gap{
+	margin-top: $mar-30;
+	margin-bottom: $mar-30;
+}
+
+.pebble-bg{
+	background-color: $pebble;
+}
+.wave-bg{
+	background-color: $wave;
+	color: $white;
+}
+.wave-bdr{
+	border-color: $wave;
+}

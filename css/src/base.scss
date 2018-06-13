@@ -1,0 +1,21 @@
+@import 'helper/reset';
+@import 'helper/variable';
+@import 'helper/button';
+@import 'helper/generic';
+@import 'helper/table';
+@import 'partials/header';
+
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+.spinner{
+	animation: spin 1s infinite linear;
+}
+
+
+
+
+

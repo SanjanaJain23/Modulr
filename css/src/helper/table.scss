@@ -1,0 +1,23 @@
+// table.scss
+
+.main{
+	table.table{
+		thead{
+			background-color: rgba(92,104,109,.1);
+			tr{
+				th{
+					border-color: $wave;
+					a{
+						&:hover, &:visited, &:focus{
+							color: $pebble;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+		tbody{
+			font-size: 13px;
+		}
+	}
+}
